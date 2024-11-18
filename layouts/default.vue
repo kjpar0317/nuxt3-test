@@ -1,7 +1,9 @@
+<script setup lang="ts">
+import AppLayout from "~/components/layouts/AppLayout.vue";
+</script>
+
 <template>
-  <div>
-    <!-- <AppHeader /> -->
-    <slot />
-    <!-- <AppFooter /> -->
-  </div>
+  <AppLayout>
+    <NuxtPage />
+  </AppLayout>
 </template>

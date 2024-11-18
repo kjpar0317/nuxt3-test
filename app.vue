@@ -1,11 +1,12 @@
 <template>
   <div>
-    <NuxtLayout v-slot="{ pageProps }">
-      <NuxtPage v-bind="pageProps" />
+    <NuxtLayout>
+      <NuxtPage />
     </NuxtLayout>
   </div>
 </template>
 
 <script lang="ts">
 import "@/assets/styles/tailwind.css";
+import "@/assets/styles/common.css";
 </script>
