@@ -5,7 +5,6 @@ import { useRoute } from "vue-router";
 import { useLayout } from "~/stores/useLayout";
 
 const route = useRoute();
-
 const { layoutState, setActiveMenuItem, onMenuToggle } = useLayout();
 
 const props = defineProps({
@@ -27,7 +26,7 @@ const props = defineProps({
   },
 });
 
-const isActiveMenu = ref<any>(false);
+const isActiveMenu = ref<boolean>(false);
 const itemKey = ref<any>(null);
 
 onBeforeMount(() => {

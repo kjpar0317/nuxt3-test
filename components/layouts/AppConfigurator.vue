@@ -1,9 +1,19 @@
-<script setup>
+<script setup lang="ts">
+import type { PaletteDesignToken as AuraPaletteDesignToken } from "@primevue/themes/aura";
+import type { PaletteDesignToken as LaraPaletteDesignToken } from "@primevue/themes/lara";
+
 import { useLayout } from "~/stores/useLayout";
 import { $t, updatePreset, updateSurfacePalette } from "@primevue/themes";
 import Aura from "@primevue/themes/aura";
 import Lara from "@primevue/themes/lara";
 import { ref } from "vue";
+
+type PaletteDesignToken = AuraPaletteDesignToken | LaraPaletteDesignToken;
+
+type PaletteColor = {
+  name: string;
+  palette: PaletteDesignToken;
+};
 
 const {
   layoutConfig,
@@ -18,8 +28,8 @@ const presets = {
   Aura,
   Lara,
 };
-const preset = ref(layoutConfig.preset);
-const presetOptions = ref(Object.keys(presets));
+const preset = ref<Readonly<string>>(layoutConfig.preset);
+const presetOptions = ref<string[]>(Object.keys(presets));
 
 const menuMode = ref(layoutConfig.menuMode);
 const menuModeOptions = ref([
@@ -27,7 +37,7 @@ const menuModeOptions = ref([
   { label: "Overlay", value: "overlay" },
 ]);
 
-const primaryColors = ref([
+const primaryColors = ref<PaletteColor[]>([
   { name: "noir", palette: {} },
   {
     name: "emerald",
@@ -427,11 +437,11 @@ const surfaces = ref([
 ]);
 
 function getPresetExt() {
-  const color = primaryColors.value.find(
+  const color: PaletteColor | undefined = primaryColors.value.find(
     (c) => c.name === layoutConfig.primary
   );
 
-  if (color.name === "noir") {
+  if (color?.name === "noir") {
     return {
       semantic: {
         primary: {
@@ -482,7 +492,7 @@ function getPresetExt() {
   } else {
     return {
       semantic: {
-        primary: color.palette,
+        primary: color?.palette,
         colorScheme: {
           light: {
             primary: {
@@ -519,7 +529,7 @@ function getPresetExt() {
   }
 }
 
-function updateColors(type, color) {
+function updateColors(type: string, color: PaletteColor) {
   if (type === "primary") {
     setPrimary(color.name);
   } else if (type === "surface") {
@@ -529,7 +539,7 @@ function updateColors(type, color) {
   applyTheme(type, color);
 }
 
-function applyTheme(type, color) {
+function applyTheme(type: string, color: PaletteColor) {
   if (type === "primary") {
     updatePreset(getPresetExt());
   } else if (type === "surface") {
@@ -539,7 +549,7 @@ function applyTheme(type, color) {
 
 function onPresetChange() {
   setPreset(preset.value);
-  const presetValue = presets[preset.value];
+  const presetValue = presets[preset.value as keyof typeof presets];
   const surfacePalette = surfaces.value.find(
     (s) => s.name === layoutConfig.surface
   )?.palette;

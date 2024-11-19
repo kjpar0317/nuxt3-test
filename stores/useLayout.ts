@@ -1,6 +1,24 @@
 import { computed, reactive, readonly } from "vue";
 
-const layoutConfig = reactive({
+export type LayoutConfig = {
+  preset: string;
+  primary: string;
+  surface: string | null;
+  darkTheme: boolean;
+  menuMode: string;
+};
+
+export type LayoutState = {
+  staticMenuDesktopInactive: boolean;
+  overlayMenuActive: boolean;
+  profileSidebarVisible: boolean;
+  configSidebarVisible: boolean;
+  staticMenuMobileActive: boolean;
+  menuHoverActive: boolean;
+  activeMenuItem: any;
+};
+
+const layoutConfig = reactive<LayoutConfig>({
   preset: "Aura",
   primary: "emerald",
   surface: null,
@@ -8,7 +26,7 @@ const layoutConfig = reactive({
   menuMode: "static",
 });
 
-const layoutState = reactive({
+const layoutState = reactive<LayoutState>({
   staticMenuDesktopInactive: false,
   overlayMenuActive: false,
   profileSidebarVisible: false,
@@ -23,7 +41,7 @@ export function useLayout() {
     layoutConfig.primary = value;
   };
 
-  const setSurface = (value: any) => {
+  const setSurface = (value: string) => {
     layoutConfig.surface = value;
   };
 
