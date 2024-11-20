@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import { reactive } from "vue";
+import { useFetch, useAsyncData } from "nuxt/app";
+
 type MovieList = {
   page: number;
   results: any[];
@@ -13,11 +16,18 @@ let list = reactive<MovieList>({
   total_results: 0,
 });
 
-const { data: results } = await useAsyncData("movie", () =>
-  $fetch(
-    "https://api.themoviedb.org/3/movie/popular?api_key=22478a88b22311a5249584b2c23d6a3d"
-  )
-);
+// const { data: results } = await useAsyncData("movie", () =>
+//   $fetch(
+//     "https://api.themoviedb.org/3/movie/popular?api_key=22478a88b22311a5249584b2c23d6a3d"
+//   )
+// );
+const { data: results } = await useFetch("/api/movie", {
+  server: true, // SSR에서 실행
+  cache: "no-cache",
+  headers: {
+    "Cache-Control": "no-cache",
+  },
+});
 
 if (results) {
   list = results as any;

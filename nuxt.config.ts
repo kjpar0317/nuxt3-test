@@ -20,4 +20,11 @@ export default defineNuxtConfig({
   build: {
     transpile: ["sass-embedded"],
   },
+  nitro: {
+    debug: true, // API 요청에 상세하게 나옴
+    plugins: ["~/server/plugins/nitroPlugin.ts"],
+    routeRules: {
+      "/api/**": { cors: true, cache: { maxAge: 60 } },
+    },
+  },
 });

@@ -1,12 +1,3 @@
 {
-  "extends": "../.nuxt/tsconfig.server.json",
-  "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["src/*"],
-      "~/*": ["src/*"],
-      "@@/*": ["src/*"],
-      "~~/*": ["src/*"]
-    }
-  }
+  "extends": "../.nuxt/tsconfig.server.json"
 }
