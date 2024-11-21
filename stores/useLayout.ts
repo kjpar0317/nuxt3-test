@@ -1,3 +1,5 @@
+import { range } from "lodash-es";
+
 export type LayoutConfig = {
   preset: string;
   primary: string;
@@ -15,6 +17,8 @@ export type LayoutState = {
   menuHoverActive: boolean;
   activeMenuItem: any;
 };
+
+type DivAction = "fade" | "transform" | "shuffle" | "none";
 
 export const useLayout = defineStore("layout", () => {
   const layoutConfig = reactive<LayoutConfig>({
@@ -98,6 +102,77 @@ export const useLayout = defineStore("layout", () => {
     () => layoutConfig.surface
   );
 
+  function initAnimate(timeline: gsap.core.Timeline) {
+    animateDivArea(timeline, ".div_area", "transform");
+  }
+
+  function animateDivArea(
+    timeline: gsap.core.Timeline,
+    target: string,
+    action: DivAction
+  ): gsap.core.Timeline {
+    const animateDiv = document.querySelectorAll(".animate_div");
+    const targetDiv = document.querySelectorAll(target);
+
+    if (targetDiv.length > 0) {
+      if (action === "fade" && animateDiv.length > 0) {
+        timeline.fromTo(
+          animateDiv,
+          { opacity: 0 },
+          {
+            ease: "power3.inOut",
+            duration: 0.6,
+            scale: 1,
+            stagger: 0.3,
+            opacity: 1,
+          }
+        );
+      } else if (action === "transform" && animateDiv.length > 0) {
+        timeline.fromTo(
+          animateDiv,
+          { scale: 0.5, opacity: 0 },
+          {
+            ease: "power3.inOut",
+            duration: 0.4,
+            scale: 1,
+            stagger: 0.2,
+            opacity: 1,
+          }
+        );
+      } else if (action === "shuffle") {
+        range(0, targetDiv.length).forEach((index: number) => {
+          if (index % 4 === 0) {
+            timeline.fromTo(
+              targetDiv[index],
+              { x: -400, opacity: 0 },
+              { x: 0, ease: "power3.inOut", duration: 0.4, opacity: 1 }
+            );
+          } else if (index % 4 === 1) {
+            timeline.fromTo(
+              targetDiv[index],
+              { y: -400, opacity: 0 },
+              { y: 0, ease: "power3.inOut", duration: 0.4, opacity: 1 }
+            );
+          } else if (index % 4 === 2) {
+            timeline.fromTo(
+              targetDiv[index],
+              { x: 400, opacity: 0 },
+              { x: 0, ease: "power3.inOut", duration: 0.4, opacity: 1 }
+            );
+          } else if (index % 4 === 3) {
+            timeline.fromTo(
+              targetDiv[index],
+              { y: 400, opacity: 0 },
+              { y: 0, ease: "power3.inOut", duration: 0.4, opacity: 1 }
+            );
+          }
+        });
+      }
+      // timeline.progress(0).kill();
+    }
+    return timeline;
+  }
+
   return {
     layoutConfig: readonly(layoutConfig),
     layoutState: readonly(layoutState),
@@ -106,6 +181,7 @@ export const useLayout = defineStore("layout", () => {
     isDarkTheme,
     getPrimary,
     getSurface,
+    initAnimate,
     setActiveMenuItem,
     toggleDarkMode,
     setPrimary,

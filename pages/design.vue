@@ -1,13 +1,20 @@
+<script lang="ts" setup>
+const { $gsap: gsap, $Draggable: Draggable } = useNuxtApp();
+const { initAnimate } = useLayout();
+
+onMounted(() => initAnimate(gsap.timeline({})));
+</script>
+
 <template>
   <div
-    class="flex flex-col items-center justify-center min-h-screen bg-base-200"
+    class="animate_div flex flex-col items-center justify-center min-h-screen bg-base-200"
   >
     <!-- dark theme -->
     <div class="container m-4">
       <div class="max-w-5xl w-full mx-auto grid gap-4 grid-cols-1">
         <!-- alert -->
         <div
-          class="flex flex-col justify-center p-4 bg-primary-500 border-gray-800 shadow-md hover:shodow-lg rounded-2xl"
+          class="div_area flex flex-col justify-center p-4 bg-primary-500 border-gray-800 shadow-md hover:shodow-lg rounded-2xl"
         >
           <div class="text-primary-100 flex items-center">
             <img
@@ -44,7 +51,7 @@
           </div>
         </div>
         <!-- profile card -->
-        <div class="flex flex-col sticky top-0 z-10">
+        <div class="div_area flex flex-col sticky top-0 z-10">
           <div
             class="bg-primary-500 border border-gray-800 shadow-lg rounded-2xl p-4"
           >
@@ -57,7 +64,7 @@
                 />
                 <a
                   href="#"
-                  class="absolute -right-2 bottom-2 -ml-3 text-white p-1 text-xs bg-green-400 hover:bg-green-500 font-medium tracking-wider rounded-full transition ease-in duration-300"
+                  class="absolute -right-2 bottom-2 -ml-3 text-white p-1 text-xs bg-primary-900 hover:bg-green-500 font-medium tracking-wider rounded-full transition ease-in duration-300"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -74,7 +81,7 @@
               <div class="flex-auto sm:ml-5 justify-evenly">
                 <div class="flex items-center justify-between sm:mt-2">
                   <div class="flex items-center">
-                    <div class="flex flex-col">
+                    <div class="div_area flex flex-col">
                       <div
                         class="w-full flex-none text-lg text-gray-200 font-bold leading-none"
                       >
@@ -288,7 +295,7 @@
                   <a
                     href="https://www.behance.net/ajeeshmon"
                     target="_blank"
-                    class="flex-no-shrink bg-green-400 hover:bg-green-500 px-5 ml-4 py-2 text-xs shadow-sm hover:shadow-lg font-medium tracking-wider border-2 border-green-300 hover:border-green-500 text-white rounded-full transition ease-in duration-300"
+                    class="flex-no-shrink bg-primary-900 hover:bg-green-500 px-5 ml-4 py-2 text-xs shadow-sm hover:shadow-lg font-medium tracking-wider border-2 border-green-300 hover:border-green-500 text-white rounded-full transition ease-in duration-300"
                     >FOLLOW</a
                   >
                 </div>
@@ -376,7 +383,7 @@
         <div class="grid gap-4 grid-cols-1 md:grid-cols-2">
           <!--confirm modal-->
           <div
-            class="flex flex-col p-4 relative items-center justify-center bg-primary-500 border border-gray-800 shadow-lg rounded-2xl"
+            class="div_area flex flex-col p-4 relative items-center justify-center bg-primary-500 border border-gray-800 shadow-lg rounded-2xl"
           >
             <div class="">
               <div class="text-center p-5 flex-auto justify-center">
@@ -416,12 +423,12 @@
               </div>
               <div class="p-3 mt-2 text-center space-x-4 md:block">
                 <button
-                  class="mb-2 md:mb-0 bg-gray-700 px-5 py-2 text-sm shadow-sm font-medium tracking-wider border-2 border-gray-600 hover:border-gray-700 text-gray-300 rounded-full hover:shadow-lg hover:bg-primary-500 transition ease-in duration-300"
+                  class="mb-2 md:mb-0 bg-primary-700 px-5 py-2 text-sm shadow-sm font-medium tracking-wider border-2 border-gray-600 hover:border-gray-700 text-gray-300 rounded-full hover:shadow-lg hover:bg-primary-500 transition ease-in duration-300"
                 >
                   Cancel
                 </button>
                 <button
-                  class="bg-green-400 hover:bg-green-500 px-5 ml-4 py-2 text-sm shadow-sm hover:shadow-lg font-medium tracking-wider border-2 border-green-300 hover:border-green-500 text-white rounded-full transition ease-in duration-300"
+                  class="bg-primary-900 hover:bg-green-500 px-5 ml-4 py-2 text-sm shadow-sm hover:shadow-lg font-medium tracking-wider border-2 border-green-300 hover:border-green-500 text-white rounded-full transition ease-in duration-300"
                 >
                   Confirm
                 </button>
@@ -536,7 +543,7 @@
                         /></svg
                     ></a>
                     <span
-                      class="inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-green-100 bg-green-400 rounded-full ml-2"
+                      class="inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-green-100 bg-primary-900 rounded-full ml-2"
                       >99</span
                     >
                   </div>
@@ -803,7 +810,7 @@
                         class="flex absolute h-2 w-2 top-0 right-0 -mt-1 -mr-1"
                       >
                         <span
-                          class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"
+                          class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-900 opacity-75"
                         ></span>
                         <span
                           class="relative inline-flex rounded-full h-2 w-2 bg-green-500"
@@ -820,7 +827,7 @@
                     <span>2 Bedroom</span><span>4 Guest</span>
                   </div>
                   <button
-                    class="mb-2 md:mb-0 flex-no-shrink bg-green-400 hover:bg-green-500 px-5 py-2 text-xs shadow-sm hover:shadow-lg font-medium tracking-wider border-2 border-green-300 hover:border-green-500 text-white rounded-full transition ease-in duration-300"
+                    class="mb-2 md:mb-0 flex-no-shrink bg-primary-900 hover:bg-green-500 px-5 py-2 text-xs shadow-sm hover:shadow-lg font-medium tracking-wider border-2 border-green-300 hover:border-green-500 text-white rounded-full transition ease-in duration-300"
                     type="button"
                     aria-label="like"
                   >
