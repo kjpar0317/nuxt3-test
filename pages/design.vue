@@ -307,7 +307,7 @@ onMounted(() => initAnimate(gsap.timeline({})));
         <div class="grid grid-cols-12 gap-4">
           <div class="col-span-12 sm:col-span-4">
             <div
-              class="p-4 relative bg-primary-500 border border-gray-800 shadow-lg rounded-2xl"
+              class="div_area p-4 relative bg-primary-500 border border-gray-800 shadow-lg rounded-2xl"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -333,7 +333,7 @@ onMounted(() => initAnimate(gsap.timeline({})));
           </div>
           <div class="col-span-12 sm:col-span-4">
             <div
-              class="p-4 relative bg-primary-500 border border-gray-800 shadow-lg rounded-2xl"
+              class="div_area p-4 relative bg-primary-500 border border-gray-800 shadow-lg rounded-2xl"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -356,7 +356,7 @@ onMounted(() => initAnimate(gsap.timeline({})));
           </div>
           <div class="col-span-12 sm:col-span-4">
             <div
-              class="p-4 relative bg-primary-500 border border-gray-800 shadow-lg rounded-2xl"
+              class="div_area p-4 relative bg-primary-500 border border-gray-800 shadow-lg rounded-2xl"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -439,7 +439,7 @@ onMounted(() => initAnimate(gsap.timeline({})));
           <div class="flex flex-col space-y-4">
             <!-- elements 1 -->
             <div
-              class="flex flex-col p-4 bg-primary-500 border-gray-800 shadow-md hover:shodow-lg rounded-2xl cursor-pointer transition ease-in duration-500 transform hover:scale-105"
+              class="div_area flex flex-col p-4 bg-primary-500 border-gray-800 shadow-md hover:shodow-lg rounded-2xl cursor-pointer transition ease-in duration-500 transform hover:scale-105"
             >
               <div class="flex items-center justify-between">
                 <div class="flex items-center mr-auto">
@@ -497,7 +497,7 @@ onMounted(() => initAnimate(gsap.timeline({})));
             </div>
             <!--elements 2-->
             <div
-              class="flex flex-col p-4 bg-primary-500 border-gray-800 shadow-md hover:shodow-lg rounded-2xl cursor-pointer transition ease-in duration-500 transform hover:scale-105"
+              class="div_area flex flex-col p-4 bg-primary-500 border-gray-800 shadow-md hover:shodow-lg rounded-2xl cursor-pointer transition ease-in duration-500 transform hover:scale-105"
             >
               <div class="flex items-center justify-between">
                 <div class="flex items-center mr-auto">
@@ -552,7 +552,7 @@ onMounted(() => initAnimate(gsap.timeline({})));
             </div>
             <!--elements 2-->
             <div
-              class="flex flex-col p-4 bg-primary-500 border-gray-800 shadow-md hover:shodow-lg rounded-2xl cursor-pointer transition ease-in duration-500 transform hover:scale-105"
+              class="div_area flex flex-col p-4 bg-primary-500 border-gray-800 shadow-md hover:shodow-lg rounded-2xl cursor-pointer transition ease-in duration-500 transform hover:scale-105"
             >
               <div class="flex items-center justify-between">
                 <div class="flex items-center mr-auto">
@@ -616,7 +616,7 @@ onMounted(() => initAnimate(gsap.timeline({})));
               </div>
             </div>
             <div
-              class="flex flex-col p-4 bg-primary-500 border border-gray-800 shadow-md hover:text-green-500 text-primary-100 hover:shodow-lg rounded-2xl transition ease-in duration-500 transform hover:scale-105 cursor-pointer"
+              class="div_area flex flex-col p-4 bg-primary-500 border border-gray-800 shadow-md hover:text-green-500 text-primary-100 hover:shodow-lg rounded-2xl transition ease-in duration-500 transform hover:scale-105 cursor-pointer"
             >
               <div class="flex items-center justify-between">
                 <div class="flex items-center mr-auto">
@@ -664,7 +664,7 @@ onMounted(() => initAnimate(gsap.timeline({})));
             </div>
           </div>
           <div
-            class="flex flex-col justify-center p-4 bg-primary-500 border-gray-800 shadow-md hover:shodow-lg rounded-2xl"
+            class="div_area flex flex-col justify-center p-4 bg-primary-500 border-gray-800 shadow-md hover:shodow-lg rounded-2xl"
           >
             <div class="flex items-center justify-between">
               <div class="flex items-center">
@@ -694,7 +694,7 @@ onMounted(() => initAnimate(gsap.timeline({})));
             </div>
           </div>
           <div
-            class="flex flex-col p-4 bg-primary-500 border-gray-800 shadow-md hover:shodow-lg rounded-2xl"
+            class="div_area flex flex-col p-4 bg-primary-500 border-gray-800 shadow-md hover:shodow-lg rounded-2xl"
           >
             <div class="flex">
               <img
@@ -747,7 +747,7 @@ onMounted(() => initAnimate(gsap.timeline({})));
             </div>
           </div>
         </div>
-        <div class="flex flex-col">
+        <div class="div_area flex flex-col">
           <div
             class="lg:w-3/5 p-4 bg-primary-500 border-gray-800 shadow-md hover:shodow-lg rounded-2xl"
           >

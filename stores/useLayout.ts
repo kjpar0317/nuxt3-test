@@ -103,7 +103,7 @@ export const useLayout = defineStore("layout", () => {
   );
 
   function initAnimate(timeline: gsap.core.Timeline) {
-    animateDivArea(timeline, ".div_area", "transform");
+    animateDivArea(timeline, ".div_area", "fade");
   }
 
   function animateDivArea(
@@ -117,7 +117,7 @@ export const useLayout = defineStore("layout", () => {
     if (targetDiv.length > 0) {
       if (action === "fade" && animateDiv.length > 0) {
         timeline.fromTo(
-          animateDiv,
+          targetDiv,
           { opacity: 0 },
           {
             ease: "power3.inOut",
@@ -129,7 +129,7 @@ export const useLayout = defineStore("layout", () => {
         );
       } else if (action === "transform" && animateDiv.length > 0) {
         timeline.fromTo(
-          animateDiv,
+          targetDiv,
           { scale: 0.5, opacity: 0 },
           {
             ease: "power3.inOut",
