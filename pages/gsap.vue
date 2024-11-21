@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-const { $gsap: gsap, $Draggable: Draggable } = useNuxtApp();
+const { $gsap: gsap, $Draggable: Draggable } = useNuxtApp() as any;
 
 onMounted(() => {
   init();
