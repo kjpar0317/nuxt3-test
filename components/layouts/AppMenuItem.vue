@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { onBeforeMount, ref, watch } from "vue";
 import { useRoute } from "vue-router";
 
 import { useLayout } from "~/stores/useLayout";

@@ -6,7 +6,6 @@ import { useLayout } from "~/stores/useLayout";
 import { $t, updatePreset, updateSurfacePalette } from "@primevue/themes";
 import Aura from "@primevue/themes/aura";
 import Lara from "@primevue/themes/lara";
-import { ref } from "vue";
 
 type PaletteDesignToken = AuraPaletteDesignToken | LaraPaletteDesignToken;
 

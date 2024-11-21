@@ -7,7 +7,7 @@ export default defineNuxtConfig({
   routeRules: {
     "/swr_no_ttl": { swr: true },
   },
-  modules: ["@nuxtjs/tailwindcss", "@primevue/nuxt-module"],
+  modules: ["@nuxtjs/tailwindcss", "@primevue/nuxt-module", "@pinia/nuxt"],
   primevue: {
     options: {
       theme: {
@@ -26,5 +26,11 @@ export default defineNuxtConfig({
     routeRules: {
       "/api/**": { cors: true, cache: { maxAge: 60 } },
     },
+  },
+  imports: {
+    dirs: ["~/stores"],
+  },
+  pinia: {
+    autoImports: ["defineStore", "acceptHMRUpdate"],
   },
 });

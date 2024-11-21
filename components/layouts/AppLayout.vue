@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { useLayout } from "~/stores/useLayout";
-import { computed, ref, watch } from "vue";
 import AppFooter from "./AppFooter.vue";
 import AppSidebar from "./AppSidebar.vue";
 import AppTopbar from "./AppTopbar.vue";
@@ -8,10 +6,9 @@ import AppTopbar from "./AppTopbar.vue";
 import "@/assets/styles/layout/layout.scss";
 
 const { layoutConfig, layoutState, isSidebarActive, resetMenu } = useLayout();
-
 const outsideClickListener = ref<any>(null);
 
-watch(isSidebarActive, (newVal: boolean) => {
+watch(isSidebarActive as any, (newVal: boolean) => {
   if (newVal) {
     bindOutsideClickListener();
   } else {
@@ -32,15 +29,16 @@ const containerClass = computed(() => {
 });
 
 function bindOutsideClickListener() {
-  // if (!outsideClickListener.value) {
-  //   outsideClickListener.value = (event: MouseEvent) => {
-  //     if (isOutsideClicked(event)) {
-  //       resetMenu();
-  //     }
-  //   };
-  outsideClickListener.value &&
-    document.addEventListener("click", outsideClickListener.value);
-  // }
+  if (!outsideClickListener.value) {
+    outsideClickListener.value = (event: any) => {
+      if (isOutsideClicked(event)) {
+        resetMenu();
+      }
+    };
+
+    outsideClickListener.value &&
+      document.addEventListener("click", outsideClickListener.value);
+  }
 }
 
 function unbindOutsideClickListener() {
