@@ -27,9 +27,9 @@ const model = ref<MenuModel[]>([
       },
       { label: "Gsap Test", icon: "pi pi-fw pi-check-square", to: "/gsap" },
       {
-        label: "Button",
+        label: "Design Test",
         icon: "pi pi-fw pi-mobile",
-        to: "/others",
+        to: "/design",
         class: "rotated-icon",
       },
       { label: "Table", icon: "pi pi-fw pi-table", to: "/others" },
