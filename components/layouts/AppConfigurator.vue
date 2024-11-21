@@ -2,7 +2,6 @@
 import type { PaletteDesignToken as AuraPaletteDesignToken } from "@primevue/themes/aura";
 import type { PaletteDesignToken as LaraPaletteDesignToken } from "@primevue/themes/lara";
 
-import { useLayout } from "~/stores/useLayout";
 import { $t, updatePreset, updateSurfacePalette } from "@primevue/themes";
 import Aura from "@primevue/themes/aura";
 import Lara from "@primevue/themes/lara";

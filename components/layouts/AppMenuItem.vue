@@ -1,8 +1,4 @@
 <script setup lang="ts">
-import { useRoute } from "vue-router";
-
-import { useLayout } from "~/stores/useLayout";
-
 const route = useRoute();
 const { layoutState, setActiveMenuItem, onMenuToggle } = useLayout();
 
