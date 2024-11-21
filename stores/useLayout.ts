@@ -39,37 +39,37 @@ export const useLayout = defineStore("layout", () => {
     activeMenuItem: null,
   });
 
-  const setPrimary = (value: string) => {
+  function setPrimary(value: string) {
     layoutConfig.primary = value;
-  };
+  }
 
-  const setSurface = (value: string) => {
+  function setSurface(value: string) {
     layoutConfig.surface = value;
-  };
+  }
 
-  const setPreset = (value: string) => {
+  function setPreset(value: string) {
     layoutConfig.preset = value;
-  };
+  }
 
-  const setActiveMenuItem = (item: any) => {
+  function setActiveMenuItem(item: any) {
     layoutState.activeMenuItem = item.value || item;
-  };
+  }
 
-  const setMenuMode = (mode: string) => {
+  function setMenuMode(mode: string) {
     layoutConfig.menuMode = mode;
-  };
+  }
 
-  const toggleDarkMode = () => {
+  function toggleDarkMode() {
     executeDarkModeToggle();
-  };
+  }
 
-  const executeDarkModeToggle = () => {
+  function executeDarkModeToggle() {
     layoutConfig.darkTheme = !layoutConfig.darkTheme;
     typeof document !== "undefined" &&
       document.documentElement.classList.toggle("app-dark");
-  };
+  }
 
-  const onMenuToggle = () => {
+  function onMenuToggle() {
     if (layoutConfig.menuMode === "overlay") {
       layoutState.overlayMenuActive = !layoutState.overlayMenuActive;
     }
@@ -80,13 +80,13 @@ export const useLayout = defineStore("layout", () => {
     } else {
       layoutState.staticMenuMobileActive = !layoutState.staticMenuMobileActive;
     }
-  };
+  }
 
-  const resetMenu = () => {
+  function resetMenu() {
     layoutState.overlayMenuActive = false;
     layoutState.staticMenuMobileActive = false;
     layoutState.menuHoverActive = false;
-  };
+  }
 
   const isSidebarActive: ComputedRef<boolean> = computed(
     () => layoutState.overlayMenuActive || layoutState.staticMenuMobileActive
