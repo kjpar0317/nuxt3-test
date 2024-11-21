@@ -18,7 +18,7 @@ export default defineNuxtConfig({
     autoImport: true,
   },
   build: {
-    transpile: ["sass-embedded"],
+    transpile: ["sass-embedded", "gsap"],
   },
   nitro: {
     debug: true, // API 요청에 상세하게 나옴

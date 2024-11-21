@@ -15,17 +15,17 @@ type MenuModel = {
 const model = ref<MenuModel[]>([
   {
     label: "Home",
-    items: [{ label: "Dashboard", icon: "pi pi-fw pi-home", to: "/" }],
+    items: [{ label: "Home", icon: "pi pi-fw pi-home", to: "/" }],
   },
   {
     label: "UI Components",
     items: [
       {
-        label: "Form Layout",
+        label: "Dashboard",
         icon: "pi pi-fw pi-id-card",
         to: "/dashboard",
       },
-      { label: "Input", icon: "pi pi-fw pi-check-square", to: "/dashboard" },
+      { label: "Gsap Test", icon: "pi pi-fw pi-check-square", to: "/gsap" },
       {
         label: "Button",
         icon: "pi pi-fw pi-mobile",
