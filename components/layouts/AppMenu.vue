@@ -29,23 +29,23 @@ const model = ref<MenuModel[]>([
       {
         label: "Button",
         icon: "pi pi-fw pi-mobile",
-        to: "/dashboard",
+        to: "/others",
         class: "rotated-icon",
       },
-      { label: "Table", icon: "pi pi-fw pi-table", to: "/dashboard" },
-      { label: "List", icon: "pi pi-fw pi-list", to: "/dashboard" },
-      { label: "Tree", icon: "pi pi-fw pi-share-alt", to: "/dashboard" },
+      { label: "Table", icon: "pi pi-fw pi-table", to: "/others" },
+      { label: "List", icon: "pi pi-fw pi-list", to: "/others" },
+      { label: "Tree", icon: "pi pi-fw pi-share-alt", to: "/others" },
     ],
   },
   {
     label: "Pages",
     icon: "pi pi-fw pi-briefcase",
-    to: "/pages",
+    to: "/others",
     items: [
       {
         label: "Landing",
         icon: "pi pi-fw pi-globe",
-        to: "/dashboard",
+        to: "/others",
       },
       {
         label: "Auth",
@@ -54,24 +54,24 @@ const model = ref<MenuModel[]>([
           {
             label: "Login",
             icon: "pi pi-fw pi-sign-in",
-            to: "/dashboard",
+            to: "/others",
           },
           {
             label: "Error",
             icon: "pi pi-fw pi-times-circle",
-            to: "/dashboard",
+            to: "/others",
           },
           {
             label: "Access Denied",
             icon: "pi pi-fw pi-lock",
-            to: "/dashboard",
+            to: "/others",
           },
         ],
       },
       {
         label: "Crud",
         icon: "pi pi-fw pi-pencil",
-        to: "/dashboard",
+        to: "/others",
       },
     ],
   },
@@ -123,9 +123,9 @@ const model = ref<MenuModel[]>([
     label: "Get Started",
     items: [
       {
-        label: "Documentation",
+        label: "About",
         icon: "pi pi-fw pi-book",
-        to: "/dashboard",
+        to: "/about",
       },
       {
         label: "View Source",
