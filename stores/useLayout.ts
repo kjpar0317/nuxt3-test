@@ -173,8 +173,8 @@ export const useLayout = defineStore("layout", () => {
   }
 
   return {
-    layoutConfig: readonly(layoutConfig),
-    layoutState: readonly(layoutState),
+    layoutConfig: toRefs(layoutConfig),
+    layoutState: toRefs(layoutState),
     onMenuToggle,
     isSidebarActive,
     isDarkTheme,

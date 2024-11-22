@@ -33,7 +33,7 @@ onMounted(() => initAnimate(gsap.timeline({})));
             </p>
             <button
               type="button"
-              class="ml-auto text-xs font-medium tracking-wider text-primary-100 text-primary-100 hover:text-green-400 transition ease-in duration-300"
+              class="ml-auto text-xs font-medium tracking-wider text-primary-100 hover:text-green-400 transition ease-in duration-300"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -753,7 +753,7 @@ onMounted(() => initAnimate(gsap.timeline({})));
           >
             <div class="flex-none lg:flex">
               <div class="h-full w-full lg:h-36 lg:w-36 lg:mb-0 mb-3">
-                <img
+                <image
                   src="https://images.unsplash.com/photo-1515362778563-6a8d0e44bc0b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80"
                   alt="unsplash images"
                   class="w-full object-scale-down lg:object-cover lg:h-36 rounded-2xl"

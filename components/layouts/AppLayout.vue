@@ -7,8 +7,9 @@ import "@/assets/styles/layout/layout.scss";
 
 const { layoutConfig, layoutState, isSidebarActive, resetMenu } = useLayout();
 const outsideClickListener = ref<any>(null);
+const refIsSidebarActive = ref(isSidebarActive);
 
-watch(isSidebarActive as any, (newVal: boolean) => {
+watch(() => refIsSidebarActive.value, (newVal: boolean) => {
   if (newVal) {
     bindOutsideClickListener();
   } else {

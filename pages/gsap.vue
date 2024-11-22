@@ -10,7 +10,7 @@ function init() {
   let xPos = 0;
   const card = document.querySelectorAll(".card-item");
   // alert(card[0].offsetWidth)
-  const slideWidth = 310; // Temporary
+  // const slideWidth = 310; // Temporary
 
   const ring = document.getElementById("ring");
   const wrapper = document.getElementById("wrapper");
