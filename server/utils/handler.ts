@@ -1,9 +1,9 @@
-import type { EventHandler, EventHandlerRequest } from "h3";
+import type { H3Event, EventHandler, EventHandlerRequest } from "h3";
 
 export const defineWrappedResponseHandler = <T extends EventHandlerRequest, D>(
   handler: EventHandler<T, D>
 ): EventHandler<T, D> =>
-  defineEventHandler<T>(async (event) => {
+  defineEventHandler<T>(async (event: H3Event<T>) => {
     try {
       // do something before the route handler
       const response = await handler(event);
