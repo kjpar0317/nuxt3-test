@@ -6,7 +6,7 @@ import { Observer } from "gsap/Observer";
 export default defineNuxtPlugin(() => {
   gsap.registerPlugin(Observer, ScrollTrigger);
 
-  if (import.meta.dev) {
+  if (import.meta.client) {
     gsap.registerPlugin(Draggable);
   }
 

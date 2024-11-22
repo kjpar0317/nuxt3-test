@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
-    "module": "ESNext"
+    "module": "ESNext",
+    "lib": ["ESNext", "DOM"],
   },
   "extends": ["./.nuxt/tsconfig.json", "./.nuxt/tsconfig.server.json"],
   "include": ["env.d.ts", ".nuxt/nuxt.d.ts", "**/*"]

@@ -65,8 +65,7 @@ export const useLayout = defineStore("layout", () => {
 
   function executeDarkModeToggle() {
     layoutConfig.darkTheme = !layoutConfig.darkTheme;
-    typeof document !== "undefined" &&
-      document.documentElement.classList.toggle("app-dark");
+    document.documentElement.classList.toggle("app-dark");
   }
 
   function onMenuToggle() {
@@ -74,7 +73,7 @@ export const useLayout = defineStore("layout", () => {
       layoutState.overlayMenuActive = !layoutState.overlayMenuActive;
     }
 
-    if (typeof window !== "undefined" && window.innerWidth > 991) {
+    if (window.innerWidth > 991) {
       layoutState.staticMenuDesktopInactive =
         !layoutState.staticMenuDesktopInactive;
     } else {

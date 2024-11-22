@@ -16,8 +16,8 @@ function init() {
   const wrapper = document.getElementById("wrapper");
   const mainContent = document.getElementById("stage");
 
-  gsap?.set(ring, { rotationY: 180, cursor: "drag" });
-  gsap?.set(card, {
+  gsap.set(ring, { rotationY: 180, cursor: "drag" });
+  gsap.set(card, {
     rotateY: (i: number) => i * -36,
     transformOrigin: "50% 50% 500px",
     z: -500,
@@ -27,7 +27,7 @@ function init() {
     backfaceVisibility: "hidden",
   });
 
-  gsap?.timeline().from(card, {
+  gsap.timeline().from(card, {
     duration: 1.5,
     y: 200,
     opacity: 0,
@@ -35,7 +35,7 @@ function init() {
     ease: "expo",
   });
 
-  Draggable?.create(wrapper, {
+  Draggable.create(wrapper, {
     trigger: mainContent,
     bounds: {
       target: mainContent,
@@ -54,12 +54,12 @@ function init() {
     onDragStart: (e: any) => {
       if (e.touches) e.clientX = e.touches[0].clientX;
       xPos = Math.round(e.clientX);
-      gsap?.set(".ring", { cursor: "grabbing" });
+      gsap.set(".ring", { cursor: "grabbing" });
     },
 
     onDrag: (e: any) => {
       if (e.touches) e.clientX = e.touches[0].clientX;
-      gsap?.to(".ring", {
+      gsap.to(".ring", {
         rotationY: "-=" + ((Math.round(e.clientX) - xPos) % 360),
       });
       console.log(xPos, e.clientX);
@@ -67,7 +67,7 @@ function init() {
     },
 
     onDragEnd: (e: any) => {
-      gsap?.set(".ring", { cursor: "grab" });
+      gsap.set(".ring", { cursor: "grab" });
     },
   });
 
@@ -75,10 +75,10 @@ function init() {
     //returns the background-position string to create parallax movement in each image
     return (
       100 -
-      (gsap?.utils.wrap(
+      (gsap.utils.wrap(
         0,
         360,
-        gsap?.getProperty(".ring", "rotationY") - 180 - i * 36
+        gsap.getProperty(".ring", "rotationY") - 180 - i * 36
       ) /
         360) *
         500 +
