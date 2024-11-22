@@ -1,4 +1,6 @@
-export default defineEventHandler((event: any) => {
+import type { H3EventContext } from 'h3';
+
+export default defineEventHandler((event: H3EventContext) => {
   // api 가 아닌경우는 return
   if (!event.node.req.url.startsWith("/api/")) return;
 
