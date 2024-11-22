@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import { reactive } from "vue";
-import { useFetch, useAsyncData } from "nuxt/app";
-
 type MovieList = {
   page: number;
   results: any[];
